@@ -744,38 +744,52 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
     }
 
     private void tomarFotografia() {
+        Toast.makeText(getContext(),"Paso 1",Toast.LENGTH_SHORT).show();
         File fileImagen=new File(Environment.getExternalStorageDirectory(),RUTA_IMAGEN);
+        Toast.makeText(getContext(),"Paso 2",Toast.LENGTH_SHORT).show();
         boolean isCreada=fileImagen.exists();
+        Toast.makeText(getContext(),"Paso 3",Toast.LENGTH_SHORT).show();
         String nombreImagen="";
         if(isCreada==false){
+            Toast.makeText(getContext(),"Paso 4.1",Toast.LENGTH_SHORT).show();
             isCreada=fileImagen.mkdirs();
         }
 
         if(isCreada==true){
-            nombreImagen=(System.currentTimeMillis()/1000)+".jpg";
+            Toast.makeText(getContext(),"Paso 4.2",Toast.LENGTH_LONG).show();
+            nombreImagen=eNombre.getText()+".jpg";
         }
 
-
+        Toast.makeText(getContext(),"Paso 5",Toast.LENGTH_LONG).show();
         ruta=Environment.getExternalStorageDirectory()+
                 File.separator+RUTA_IMAGEN+File.separator+nombreImagen;
 
+        Toast.makeText(getContext(),"Paso 6",Toast.LENGTH_LONG).show();
         File imagen=new File(ruta);
 
+        Toast.makeText(getContext(),"Paso 7",Toast.LENGTH_LONG).show();
         Intent intent=null;
+        /*Toast.makeText(getContext(),"Paso 8",Toast.LENGTH_LONG).show();
         intent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         ////
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.N)
         {
+            Toast.makeText(getContext(),"Paso 9.1",Toast.LENGTH_LONG).show();
             String authorities=getContext().getPackageName()+".provider";
+            Toast.makeText(getContext(),"Paso 10.1",Toast.LENGTH_LONG).show();
             Uri imageUri=FileProvider.getUriForFile(getContext(),authorities,imagen);
+            Toast.makeText(getContext(),"Paso 11.1",Toast.LENGTH_LONG).show();
             intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
         }else
         {
+            Toast.makeText(getContext(),"Paso 9.2",Toast.LENGTH_LONG).show();
             intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(imagen));
         }
+        Toast.makeText(getContext(),"Paso 12",Toast.LENGTH_LONG).show();
         startActivityForResult(intent,COD_FOTO);
 
         ////
+        */
     }
 
     @Override
@@ -815,7 +829,6 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
         int ancho = bitmap.getWidth();
         int alto = bitmap.getHeight();
 
-        Toast.makeText(getContext(),"Redimensionando",Toast.LENGTH_LONG).show();
         if (ancho > anchoNuevo || alto > altoNuevo){
 
             float escalaAncho = anchoNuevo / ancho;
