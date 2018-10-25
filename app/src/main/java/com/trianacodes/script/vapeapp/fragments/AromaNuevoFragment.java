@@ -756,48 +756,47 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
         }
 
         if(isCreada==true){
-            Toast.makeText(getContext(),"Paso 4.2",Toast.LENGTH_LONG).show();
-            nombreImagen=eNombre.getText()+".jpg";
+            Toast.makeText(getContext(),"Paso 4.2",Toast.LENGTH_SHORT).show();
+            nombreImagen = eNombre.getText().toString() + ".jpg";
         }
 
-        Toast.makeText(getContext(),"Paso 5",Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(),"Paso 5",Toast.LENGTH_SHORT).show();
         ruta=Environment.getExternalStorageDirectory()+
                 File.separator+RUTA_IMAGEN+File.separator+nombreImagen;
 
-        Toast.makeText(getContext(),"Paso 6",Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(),"Paso 6",Toast.LENGTH_SHORT).show();
         File imagen=new File(ruta);
 
-        Toast.makeText(getContext(),"Paso 7",Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(),"Paso 7",Toast.LENGTH_SHORT).show();
         Intent intent=null;
-        /*Toast.makeText(getContext(),"Paso 8",Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(),"Paso 8",Toast.LENGTH_SHORT).show();
         intent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        ////
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.N)
-        {
-            Toast.makeText(getContext(),"Paso 9.1",Toast.LENGTH_LONG).show();
+
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.N) {
+            Toast.makeText(getContext(),"Paso 9.1",Toast.LENGTH_SHORT).show();
             String authorities=getContext().getPackageName()+".provider";
-            Toast.makeText(getContext(),"Paso 10.1",Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(),"Paso 10.1",Toast.LENGTH_SHORT).show();
             Uri imageUri=FileProvider.getUriForFile(getContext(),authorities,imagen);
-            Toast.makeText(getContext(),"Paso 11.1",Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(),"Paso 11.1",Toast.LENGTH_SHORT).show();
             intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-        }else
-        {
-            Toast.makeText(getContext(),"Paso 9.2",Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getContext(),"Paso 9.2",Toast.LENGTH_SHORT).show();
             intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(imagen));
         }
-        Toast.makeText(getContext(),"Paso 12",Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(),"Paso 12",Toast.LENGTH_SHORT).show();
         startActivityForResult(intent,COD_FOTO);
+        Toast.makeText(getContext(),"paso 13",Toast.LENGTH_SHORT).show();
 
-        ////
-        */
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+
         if (resultCode==RESULT_OK){
 
+            Toast.makeText(getContext(),"paso 14",Toast.LENGTH_SHORT).show();
             switch (requestCode){
                 case COD_SELECCIONA:
                     Uri miPath=data.getData();
