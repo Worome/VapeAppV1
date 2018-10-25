@@ -6,7 +6,7 @@ public class Aromas {
     /*Creo los argumentos con private para que no se pueda acceder a ellos nada más que desde
     esta clase.*/
     private int tiempoMinimoMaceracion, tiempoMaximoMaceracion, desdePorcentaje, hastaPorcentaje;
-    private int imagen;
+    private String imagen;
     private double valoracion;
     private String Tipo, Nombre, Marca, Observaciones;
     public String Identificador;
@@ -15,7 +15,7 @@ public class Aromas {
       iniciales a cada una de sus propiedades.*/
 
     public Aromas(int tiempoMinimoMaceracion, int tiempoMaximoMaceracion, int desdePorcentaje,
-                  int hastaPorcentaje, int valoracion, int imagen, String tipo, String nombre,
+                  int hastaPorcentaje, int valoracion, String imagen, String tipo, String nombre,
                   String marca, String observaciones, String identificador) {
         this.tiempoMinimoMaceracion = tiempoMinimoMaceracion;
         this.tiempoMaximoMaceracion = tiempoMaximoMaceracion;
@@ -38,7 +38,7 @@ public class Aromas {
         this.desdePorcentaje = 0;
         this.hastaPorcentaje = 0;
         this.valoracion = 0.0;
-        this.imagen = 0;
+        this.imagen = "";
         this.Tipo = "";
         this.Nombre = "";
         this.Marca = "";
@@ -104,11 +104,11 @@ public class Aromas {
         this.valoracion = valoracion;
     }
 
-    public int getImagen() {
+    public String getImagen() {
         return imagen;
     }
 
-    public void setImagen(int imagen) {
+    public void setImagen(String imagen) {
         this.imagen = imagen;
     }
 

@@ -36,7 +36,7 @@ public class EstructuraBd {
             COMMA_SEP + AROMA_DESDE_PORCENTAJE + INTEGER_TYPE + COMMA_SEP + AROMA_HASTA_PORCENTAJE +
             INTEGER_TYPE  + COMMA_SEP + AROMA_MIN_MACERACION + INTEGER_TYPE +
             COMMA_SEP + AROMA_MAX_MACERACION + INTEGER_TYPE + COMMA_SEP + AROMA_OBSERVACIONES + TEXT_TYPE +
-            COMMA_SEP + AROMA_VALORACION + REAL_TYPE + COMMA_SEP + AROMA_IMAGEN + INTEGER_TYPE + " )";
+            COMMA_SEP + AROMA_VALORACION + REAL_TYPE + COMMA_SEP + AROMA_IMAGEN + TEXT_TYPE + " )";
 
     // Constantes que contienen las sentencias de eliminación de tablas
     public static final String SQL_DELETE_AROMAS = "DROP TABLE IF EXISTS " + TABLA_AROMA;
@@ -47,7 +47,7 @@ public class EstructuraBd {
 
     public static final String ACTUALIZA_BASEDATOS_VERSION_3 = "ALTER TABLE " + TABLA_AROMA + " ADD COLUMN " +
             AROMA_HASTA_PORCENTAJE + INTEGER_TYPE + COMMA_SEP +
-            AROMA_VALORACION + REAL_TYPE + COMMA_SEP + AROMA_IMAGEN + INTEGER_TYPE;
+            AROMA_VALORACION + REAL_TYPE + COMMA_SEP + AROMA_IMAGEN + TEXT_TYPE;
 
 
     // Creo el constructor

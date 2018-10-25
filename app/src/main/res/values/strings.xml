@@ -39,6 +39,7 @@
     <string name="opcion_menu_3">Lista</string>
     <string name="submenu">Información</string>
     <string name="opcion_submenu_1">Desarrollador</string>
+    <string name="mensaje_porcentaje">Por favor, comprueba los valores de los porcentajes recomendados</string>
 
     <string-array name="tipos">
 
@@ -62,5 +63,7 @@
     <string name="Aromas_BotonImagen">Incluir Foto</string>
     <string name="Titulo_Nuevo_Aroma">NUEVOS AROMAS</string>
     <string name="descripcion_imagen_aroma">Imágenes de los aromas</string>
+    <string name="titulo_nuevo_aroma">Nuevo Aroma</string>
+    <string name="Aromas_Foto">Añadir imagen</string>
 
 </resources>

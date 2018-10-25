@@ -63,5 +63,7 @@
 
     <string name="titulo_nuevo_aroma">New Flavours</string>
     <string name="Aromas_Foto">Add Image</string>
+    <string name="mensaje_porcentaje">Please, check the values of the recommended percentages</string>
+    <string name="descripcion_imagen_aroma">images of the flavours</string>
 
 </resources>
