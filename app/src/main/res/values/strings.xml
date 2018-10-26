@@ -40,9 +40,11 @@
     <string name="submenu">Información</string>
     <string name="opcion_submenu_1">Desarrollador</string>
     <string name="mensaje_porcentaje">Por favor, comprueba los valores de los porcentajes recomendados</string>
+    <string name="mensaje_seleccion">"Tienes que indicar el tipo de aroma</string>
 
     <string-array name="tipos">
 
+        <item>Selecciona:</item>
         <item>Frutal</item>
         <item>Bebidas</item>
         <item>Cremas</item>

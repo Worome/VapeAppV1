@@ -141,6 +141,7 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
         valoracion = vista.findViewById(R.id.rbValoracion);
         btnImagen = vista.findViewById(R.id.btnImagen);
         btnNuevo = vista.findViewById(R.id.btnNuevo);
+        valoracion.setRating(0);
 
         if(validaPermisos()){
             btnImagen.setEnabled(true);
@@ -352,7 +353,7 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                    aroma.setTipo(adapterView.getItemAtPosition(i).toString());
+                        aroma.setTipo(adapterView.getItemAtPosition(i).toString());
 
                 }
 
@@ -991,6 +992,8 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
 
     private void estableceValores() {
 
+        /*String rutaSinEspacio = ruta;
+        rutaSinEspacio = String.replace(" ","");*/
         aroma.setNombre(eNombre.getText().toString());
         aroma.setMarca(eMarca.getText().toString());
         // El valor del tipo se asigna en controlDesplegable()
@@ -999,7 +1002,7 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
         aroma.setTiempoMinimoMaceracion(sbMinMaceracion.getProgress());
         aroma.setTiempoMaximoMaceracion(sbMaxMaceracion.getProgress());
         aroma.setObservaciones(eObservaciones.getText().toString());
-        aroma.setImagen(ruta);
+        aroma.setImagen(ruta.replaceAll("\\s+", ""));
         aroma.setValoracion( (double) valoracion.getRating());
 
     }
@@ -1016,7 +1019,7 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
         protected Void doInBackground(Void... voids) {
 
             try{
-                Toast.makeText(getContext(),"en try Inserta",Toast.LENGTH_LONG).show();
+
                 operacionesDatos.getDb().beginTransaction();
                 operacionesDatos.insertarAroma(aroma);
                 operacionesDatos.getDb().setTransactionSuccessful();

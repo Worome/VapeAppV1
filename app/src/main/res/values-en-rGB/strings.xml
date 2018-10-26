@@ -65,5 +65,6 @@
     <string name="Aromas_Foto">Add Image</string>
     <string name="mensaje_porcentaje">Please, check the values of the recommended percentages</string>
     <string name="descripcion_imagen_aroma">images of the flavours</string>
+    <string name="mensaje_seleccion">You have to indicate the type of aroma</string>
 
 </resources>
