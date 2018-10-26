@@ -673,7 +673,9 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
                         eObservaciones.setText("");
 
                         //Todo: Ver cómo funciona el RateBar y las imagenes para ponerlo a 0
-                        //imagen.setText(0);
+
+                        imageAroma.setImageResource(R.drawable.img_base);
+
                         valoracion.setRating(0);
                         //eNombre.setNextFocusForwardId(R.id.etNombre);
                         eNombre.requestFocus(R.id.etNombre);
@@ -924,7 +926,7 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
 
         if (sbMinMaceracion.getProgress() > sbMaxMaceracion.getProgress()){
 
-                   /* Guardo den el SharedPreferences los datos necesarios que hay que mostrar en el
+            /* Guardo den el SharedPreferences los datos necesarios que hay que mostrar en el
             cuadro de diálogo*/
             SharedPreferences preferencias = this.getActivity().getSharedPreferences("Dialogos",Context.MODE_PRIVATE);
             SharedPreferences.Editor datosEnviados = preferencias.edit();
