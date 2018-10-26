@@ -23,7 +23,7 @@ public class EstructuraBd {
     // Constantes que contienen textos generales
     private static final String TEXT_TYPE = " TEXT";
     private static final String INTEGER_TYPE = " INTEGER";
-    private static final String COMMA_SEP = ", ";
+    private static final String COMMA_SEP = ",";
     private static final String REAL_TYPE = " REAL";
 
     /* Constantes que contienen las sentencias de creación de las tablas (Cada vez que añada, borre

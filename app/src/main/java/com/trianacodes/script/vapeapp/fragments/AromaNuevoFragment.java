@@ -353,7 +353,15 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
+                    if (adapterView.getItemAtPosition(i).toString().equals("Selecciona")){
+
+                        aroma.setTipo("No asignado");
+
+                    } else{
+
                         aroma.setTipo(adapterView.getItemAtPosition(i).toString());
+
+                    }
 
                 }
 
@@ -1002,7 +1010,17 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
         aroma.setTiempoMinimoMaceracion(sbMinMaceracion.getProgress());
         aroma.setTiempoMaximoMaceracion(sbMaxMaceracion.getProgress());
         aroma.setObservaciones(eObservaciones.getText().toString());
-        aroma.setImagen(ruta.replaceAll("\\s+", ""));
+        Toast.makeText(getContext(),"La ruta es: *" + ruta + "F*", Toast.LENGTH_LONG).show();
+        if (ruta == null){
+
+            aroma.setImagen("");
+
+        } else {
+
+            aroma.setImagen(ruta.replaceAll("\\s+", ""));
+
+        }
+
         aroma.setValoracion( (double) valoracion.getRating());
 
     }

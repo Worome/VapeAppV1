@@ -44,7 +44,7 @@
 
     <string-array name="tipos">
 
-        <item>Selecciona:</item>
+        <item>Selecciona</item>
         <item>Frutal</item>
         <item>Bebidas</item>
         <item>Cremas</item>

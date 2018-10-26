@@ -37,7 +37,7 @@ public class Aromas {
         this.tiempoMaximoMaceracion = 0;
         this.desdePorcentaje = 0;
         this.hastaPorcentaje = 0;
-        this.valoracion = 0.0;
+        this.valoracion = 0;
         this.imagen = "";
         this.Tipo = "";
         this.Nombre = "";
