@@ -41,6 +41,7 @@ import com.trianacodes.script.vapeapp.basedatos.OperacionesBasesDeDatos;
 import com.trianacodes.script.vapeapp.entidades.Aromas;
 
 import java.io.File;
+import java.io.IOException;
 
 import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
@@ -797,16 +798,27 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-
         if (resultCode==RESULT_OK){
 
             switch (requestCode){
                 case COD_SELECCIONA:
                     Uri miPath=data.getData();
                     imageAroma.setImageURI(miPath);
+                    try{
+
+                        bitmap = MediaStore.Images.Media.getBitmap(getContext().getContentResolver(),
+                                miPath);
+                        imageAroma.setImageBitmap(bitmap);
+
+                    } catch (IOException e){
+
+                        e.printStackTrace();
+
+                    }
+
                     break;
 
-                case COD_FOTO:
+               case COD_FOTO:
                     MediaScannerConnection.scanFile(getContext(), new String[]{ruta}, null,
                             new MediaScannerConnection.OnScanCompletedListener() {
                                 @Override
@@ -830,7 +842,6 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
 
         int ancho = bitmap.getWidth();
         int alto = bitmap.getHeight();
-
         if (ancho > anchoNuevo || alto > altoNuevo){
 
             float escalaAncho = anchoNuevo / ancho;
