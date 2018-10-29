@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.media.MediaScannerConnection;
+import android.media.TimedMetaData;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -769,6 +770,11 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
         if(isCreada==true){
 
             nombreImagen = eNombre.getText().toString() + ".jpg";
+            if (nombreImagen.equals(".jpg")){
+
+                nombreImagen = System.currentTimeMillis()/1000 + ".jpg";
+
+            }
 
         }
 
