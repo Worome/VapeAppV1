@@ -82,6 +82,7 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
     private final int COD_SELECCIONA = 10;
     private final int COD_REQUEST = 100;
     private Bitmap bitmap;
+    private String nombreImagen="";
 
 
     // TODO: Rename and change types of parameters
@@ -673,6 +674,7 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
                         sbMinMaceracion.setProgress(0);
                         sbMaxMaceracion.setProgress(0);
                         eObservaciones.setText("");
+                        ruta = "";
 
                         //Todo: Ver cómo funciona el RateBar y las imagenes para ponerlo a 0
 
@@ -760,7 +762,6 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
 
         File fileImagen=new File(Environment.getExternalStorageDirectory(),RUTA_IMAGEN);
         boolean isCreada=fileImagen.exists();
-        String nombreImagen="";
         if(isCreada==false){
 
             isCreada=fileImagen.mkdirs();
@@ -810,6 +811,7 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
                 case COD_SELECCIONA:
                     Uri miPath=data.getData();
                     imageAroma.setImageURI(miPath);
+                    ruta = miPath.toString();
                     try{
 
                         bitmap = MediaStore.Images.Media.getBitmap(getContext().getContentResolver(),
@@ -1029,7 +1031,7 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
         aroma.setTiempoMinimoMaceracion(sbMinMaceracion.getProgress());
         aroma.setTiempoMaximoMaceracion(sbMaxMaceracion.getProgress());
         aroma.setObservaciones(eObservaciones.getText().toString());
-        Toast.makeText(getContext(),"La ruta es: *" + ruta + "F*", Toast.LENGTH_LONG).show();
+
         if (ruta == null){
 
             aroma.setImagen("");
