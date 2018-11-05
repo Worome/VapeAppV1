@@ -50,6 +50,7 @@ import static android.app.Activity.RESULT_OK;
 
 //Todo: controlar que Porcentaje desde no sea nunca mayor que porcentaje hasta
 
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -336,7 +337,7 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
         ArrayAdapter tipos = ArrayAdapter.createFromResource(getContext(), R.array.tipos,
                 R.layout.spinner_personalizado);
         // Asigno el desplegable de la interfaz al objeto de tipo Spinner que he creado (desplegable)
-       // desplegable = findViewById(R.id.spTipo);
+        // desplegable = findViewById(R.id.spTipo);
         /* Establezco el tipo de lista del adaptador. Como quiero qeu el tamaño de letra del
         desplegable sea otro he creado otro layout (dropdown_spinner_personalizado) en el que defino
         las características (tamaño, padding, color, etc.) y es el que asigno en el
@@ -826,7 +827,7 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
 
                     break;
 
-               case COD_FOTO:
+                case COD_FOTO:
                     MediaScannerConnection.scanFile(getContext(), new String[]{ruta}, null,
                             new MediaScannerConnection.OnScanCompletedListener() {
                                 @Override
@@ -842,7 +843,7 @@ public class AromaNuevoFragment extends android.support.v4.app.Fragment {
             }
 
             bitmap = redimensionarImagen(bitmap, 600, 800);
-            
+
         }
     }
 

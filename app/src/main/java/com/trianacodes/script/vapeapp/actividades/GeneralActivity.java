@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.trianacodes.script.vapeapp.R;
+import com.trianacodes.script.vapeapp.fragments.AromaListaFragment;
 import com.trianacodes.script.vapeapp.fragments.AromaNuevoFragment;
 import com.trianacodes.script.vapeapp.fragments.DefectoFragment;
 import com.trianacodes.script.vapeapp.interfaces.fragmentos;
@@ -27,6 +28,7 @@ public class GeneralActivity extends AppCompatActivity
 
     Fragment defecto;
     Fragment aromaNuevo;
+    Fragment aromaLista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,7 @@ public class GeneralActivity extends AppCompatActivity
 
         defecto = new DefectoFragment();
         aromaNuevo = new AromaNuevoFragment();
+        aromaLista = new AromaListaFragment();
 
         getSupportFragmentManager().beginTransaction().add(R.id.contenedor_fragments, defecto).commit();
 
@@ -95,9 +98,12 @@ public class GeneralActivity extends AppCompatActivity
             //Vuelvo al activity Inicio
             finish();
         } else if (id == R.id.nav_nuevo) {
+            /* Para que no se muestre error al hacer esta asignación, en el archivo java del
+            * Fragment hay que hacer que su clase extienda de android.support.v4.app.Fragment */
             fragmentoSeleccionado = new AromaNuevoFragment();
             estaSeleccionado = true;
         } else if (id == R.id.nav_consulta) {
+            fragmentoSeleccionado = new AromaListaFragment();
             estaSeleccionado = true;
         } else if (id == R.id.nav_info) {
             estaSeleccionado = true;
